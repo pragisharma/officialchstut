@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        <li><a href="{{ url_for('index') }}">Tutorial</a></li>
+        <li><a href="{{ url_for('advisory') }}">Advisory</a></li>
+        <li><a href="{{ url_for('aboutme') }}">About Me</a></li>
+        <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+        <li style="float:right"><a href="https://chs-map.vercel.app/" target="_blank">Tino Map</a></li>
+        <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial" target="_blank">GitHub</a></li>
+    </ul>
+    <hr>
+
+    <h1 style="width: 100%">
+        {% block title %} Edit {{ classes.teacher }}'s Details
+        {% endblock %}
+    </h1>
+    <form method="post" class="class">
+       
+
+        <p>
+            <label for="status">Status</label>
+            <input type="text" name="status"
+                   value={{ classes.status }}
+                   placeholder="Status">
+            </input>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

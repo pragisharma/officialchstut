@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+    <li><a href="{{ url_for('index') }}">Tutorial</a></li>
+    <li><a class="active" href="{{ url_for('advisory') }}">Advisory</a></li>
+    <li><a href="{{ url_for('aboutme') }}">About Me</a></li>
+    <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+    <li style="float:right"><a href="https://chs-map.vercel.app/" target="_blank">Tino Map</a></li>
+    <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial" target="_blank">GitHub</a></li>
+   </ul>
+<hr>
+<h1>{% block title %} Advisory {% endblock %}</h1>
+
+
+<p>
+    <b>10/11: </b>
+    District-wide advisory lessons on community/belonging. If you have a 4th period class,
+    you'll stay there for Advisory; if you do not have a 4th period, check your schedule
+    for your advisory assignment.
+
+    <br> <br>
+
+    <b>11/15: </b>
+    Interrupting the Pyramid of Hate. If you have a 4th period class,
+    you'll stay there for Advisory; if you do not have a 4th period, check your schedule
+    for your advisory assignment.
+<br><br>
+    <b>12/8: </b>
+    Climate Change. If you have a 4th period class,
+    you'll stay there for Advisory; if you do not have a 4th period, check your schedule
+    for your advisory assignment.
+</p>
+    
+{% endblock %}

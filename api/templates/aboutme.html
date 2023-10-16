@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        <li><a href="{{ url_for('index') }}">Tutorial</a></li>
+        <li><a href="{{ url_for('advisory') }}">Advisory</a></li>
+        <li><a class="active" href="{{ url_for('aboutme') }}">About Me</a></li>
+        <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+        <li style="float:right"><a href="https://chs-map.vercel.app/" target="_blank">Tino Map</a></li>
+        <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial" target="_blank">GitHub</a></li>
+    </ul>
+    <hr>
+    <h1>{% block title %} About Me {% endblock %}</h1>
+
+    <p>created by: Pragya Sharma, Kavya Gupta, & Namita Gaidhani<br>
+        last updated: October 6th, 2023<br><br>
+        
+        Hii guys, welcome to TinoTorial! This is an organizer for the availability in different rooms during tutorial on Mondays, Wednesdays, and Fridays for Cupertino High School. It tells has an organized table which includes data about the teachers, their room #s, and the status of their room. The status can consist of open, closed, only open for students, or advisory. The status is editable by the respective teachers in their rooms. During advisory days, the blurb will be updated describing the specific date and timings along with a brief description. 
+        <br><br>
+        Inspiration behind this: We had a test in Mr. McLeods Room in 2nd period, and during that people started entering the room as soon as tutorial started. Not everyone was done with the test, and we kept getting bombarded lol. Mr. McLeod and the TAs had to run and add signs on the doors and lock them, yet people still kept coming. So with this website, people will be able to see live updates of the status! :DD </p>
+{% endblock %} 
