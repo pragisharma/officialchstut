@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+   {% block content %}
+   <ul>
+    <li><a class="active" href="{{ url_for('index') }}">Tutorial</a></li>
+    <li><a href="{{ url_for('advisory') }}">Advisory</a></li>
+    <li><a href="{{ url_for('aboutme') }}">About Me</a></li>
+    <li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+    <li style="float:right"><a href="https://chs-map.vercel.app/" target="_blank">Tino Map</a></li>
+    <li style="float:right"><a href="https://github.com/pragisharma/chs-tutorial" target="_blank">GitHub</a></li>
+   </ul>
+    <hr>
+
+<marquee style="color:#ce1f5f"><b>ADVISORY 10/11: DISTRICT-WIDE ADVISORY ON COMMUNITY AND BELONGING</b></marquee>
+<hr>
+    <h3>Teacher info</h3>
+    <p>A table showing teacher's availabilities during tutorial</p>
+
+
+    <h1 class="title">{% block title %} Teachers {% endblock %}</h1>
+    <table class="content">
+        <th>Teacher</th>
+        <th>Subject</th>
+        <th>Room Number</th>
+        <th>Availability</th>
+        <th>Edit Status</th>
+        {% for class in classes %}
+            <tr class="class">
+                <td>{{ class.teacher}}</th>
+                <td>{{ class.subject}}</th>
+                <td>{{ class.room }}</th>
+                <td class="{% if class.status == 'Open' %}open{% elif class.status == 'Closed' %}closed{% elif class.status == 'Open for Students' %}openStudents{% endif %}">{{ class.status }}</th>
+                <td><a href="{{ url_for('edit', id=class.id) }}">Edit</a></th>
+            </tr>
+            
+        {% endfor %}
+        </table>
+{% endblock %}
